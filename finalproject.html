@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- Final Group Project -->
+ <!-- Buehler, Moffat, Moore, Thomas-->
+
+<html lang="en">
+    <head>
+        <!-- set character encoding -->
+        <meta charset="utf-8" />
+        <!-- tab title -->
+        <title>Texas Safety Rest Areas Map</title>
+        <!-- include arcgis api for javascript -->
+        <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
+        <link rel="stylesheet" href="FP.css">
+        <script src="https://js.arcgis.com/4.30/"></script>
+        <script src="FP.js" defer></script>
+    </head>
+    <!-- page header  -->
+     <header>
+        Texas Safety Rest Areas Map
+        <!-- div for main navigation linking addition HTML pages -->
+        <div class= "topNav" id="myTopNav">
+          <a href= "finalproject.html" class="nav-link"> Main </a>
+          <a href= "notable_stops.html" class="nav-link" target="_self"> Notable Stops </a> <!-- add class to change font size-->
+          <a href= "about_us.html" class="nav-link"> About Us </a>
+          <a href= "resources.html" class="nav-link"> Resources </a>
+       </div>
+     </header>
+    <body>
+         <!-- map on top of left nav - adding container -->
+          <div class="container">
+         <!-- left navigation window  -->
+          <nav id="navPane">
+            <ul> <!-- unsorted list for 4 options -->
+                <li>
+                  <div class="description">
+                    <h3>What Are Texas Safety Rest Areas?</h3>
+                    <p>Safety rest areas are designed to provide clean facilities for travelers and as a place
+                      to rest and take breaks during road trips to reduce the risk of fatigued driving,
+                      often including 24/7 restrooms, drinking water, picnic tables, and overnight parking.
+                      Newer rest areas featuring vernacular designs that reflect local fulture and amenities such as
+                      interactive displays, playgrounds, and gardens that make them attractive for stops.
+                       </p>
+                  </div>
+                <li>
+                  <!--container for query -->
+                  <div id="querySection">
+                    <p><span id="printResults">Please Select Features and/or Rest Area Type</span></p> <!--query instructions/results output-->
+                    <!--container for checkboxes-->
+                    <div class="checkboxes-container">
+                      <div id="featuresCheckboxes" class="dropdown-content"></div>    <!--feature checkboxes-->
+                      <div id="restAreaTypeCheckboxes" class="dropdown-content"></div> <!--rest area type checkboxes-->
+                    </div>
+                    <!--container for buttons-->
+                    <div class="buttons-container">
+                      <button id="runQuery">Run Query</button>     <!--run query button-->
+                      <button id="clearQuery">Clear Query</button> <!--clear query button-->
+                    </div>
+                </div>
+                </li>
+                <li><!-- update for Locate & Buffer tool-->
+                  <div id="option3Content">
+                    <!-- buffer calc instructions -->
+                     <p class="buffer-instructions">
+                        Select a Radius, click Enable Buffer, then click on the map.
+                     </p>
+                  <button id="toggleButton3">Enable Buffer Calculator</button>
+                   <div id="distanceOutput3">
+                    <label for="radiusSelect">Radius:</label>
+                  <select id="radiusSelect"> <!-- the thought here is that every 60 miles equals about one hour of travel time-->
+                    <option value="5">5 miles</option>
+                    <option value="10">10 miles</option>
+                    <option value="20">20 miles</option>
+                    <option value="30">30 miles</option>
+                    <option value="40">40 miles</option>
+                    <option value="50">50 miles</option>
+                    <option value="100">100 miles</option>
+                    <option value="150">150 miles</option>
+                    <option value="200">200 miles</option>
+                    <option value="250">250 miles</option>
+                    <option value="300">300 miles</option>
+                    <option value="350">350 miles</option>
+                    <option value="400">400 miles</option>
+                  </select>
+                </div>
+                </li>
+                <li>
+                  <!-- container for distance calculator -->
+                  <div id="distCalcSection">
+                    <div id="distCalcInstructions">Click Two Points on the Map to Calculate Distance</div> <!--instructions for calc-->
+                    <button id="toggleButton">Enable Distance Calculator</button> <!--calc button-->
+                    <div id="distanceOutput">Distance: Not calculated yet</div> <!--output text (displays distance)-->
+                  </div>
+                </li>
+            </ul>
+          </nav>
+        <!-- div for map -->
+         <div id="viewDiv">
+           <button id="fullExtentButton" class="full-extent-button">Full Extent</button> <!-- full extent button -->
+         </div>
+        <!--future - attempt at buffer tool radius query  -->
+        <br>
+        <footer>
+            <script>
+              // Creates a variable 'today' and assigns it the date for today in milliseconds
+              var today = new Date();
+              // Creates a variable 'year' and assigns it the full year for today
+              var year = today.getFullYear();
+              // Writes "Copyright (copyright symbol) 2024 (or whatever the current year is)"
+              document.writeln("&copy; Copyright " + year + " Carston Buehler, Emma Moffat, Easton Moore, Amanda Thomas");
+            </script>
+        </footer>
+    </body>
+</html>

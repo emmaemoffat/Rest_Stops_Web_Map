@@ -1,0 +1,135 @@
+/* about us... css */
+
+/* Start Mobile Friendly Resize */
+
+@media (max-width: 768px) {
+  /* Adjust layout for smaller screens */
+  .card-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+  }
+
+  .card {
+    width: 100%; /* Make cards full width */
+    margin: 20px 0; /* Adjust margins for spacing */
+  }
+}
+/* End mobile Friendly Resize */
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #d2b48c;
+}
+
+header {
+    font-family: 'Calibri', sans-serif; /* match our ppt slides */
+    background-color: rgb(255,255,255); /* white */
+    color: rgb(189, 88, 44); /* match our ppt slides */
+    font-size: 30px; /* increase font size */
+    font-weight: bold; /* make the font bold */
+    text-align: center;
+    padding: 10px;
+    border: 2px solid rgb(189, 88, 44);
+    z-index: 10; /* place header on top of the map */
+    position: relative; /* add to keep zoom visible on map */
+    box-shadow: 0 5px 5px #636363 /*added shadow visual below header */
+}
+
+footer {
+  font-family: 'Calibri', sans-serif; /* match our ppt slides */
+  background-color: rgb(255,255,255); /* white */
+  color: rgb(189, 88, 44); /* match our ppt slides */
+  font-size: 18px; /* increased font size*/
+  font-weight: bold; /* make title stand out, trying bolder */
+  text-align: center;
+  padding: 5px;
+  border: 2px solid rgb(189, 88, 44);
+  z-index: 10; /* place header on top of the map */
+  position: relative; /* add to keep zoom visible on map */
+  box-shadow: 0 5px 5px #636363;
+  /* display: flex; */
+  bottom: 0px;
+  /* margin: 0; */
+  position: fixed;
+  width: 100%;
+}
+
+.nav-link {
+    font-size: 18px; /* smaller font size for navigation links */
+    margin: 0 10px; /* add spacing between the links */
+    text-decoration: none;
+    color: rgb(189, 88, 44); /* match the header color */
+    }
+
+/* add box around nav links in header for better user experience */
+.nav-link:hover {
+    background-color: rgb(189, 88, 44); /*setting box fill color */
+    color: white; /*link color changes to white*/
+    border: 1px solid rgb(189, 88, 44); /*setting box border color */
+    border-radius: 5px;
+    }
+
+.nav-link:active {
+  border: 1px solid rgb(189,88, 44);
+  border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    margin: auto;
+}
+
+.card-container {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  /* width: 1600px; */
+  margin: auto;
+}
+
+.card {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgb(189,88,44);
+  overflow: hidden;
+  width: 400px;
+  height: auto;
+  margin: 60px auto;
+}
+
+.card-img {
+  width: 100%;
+  height: 300px;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.card-name,
+.card h2,
+.card h3 {
+  font-family: 'Calibri', sans-serif;
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card-description,
+.profile-text {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: 'Calibri', sans-serif;
+  color: #000;
+  line-height: 1.6;
+}

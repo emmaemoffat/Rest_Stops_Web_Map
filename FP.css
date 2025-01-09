@@ -1,0 +1,414 @@
+/* final project css */
+
+/* START OF MOBILE RESIZING - https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #navPane {
+        width: 100%;
+        height: auto; /* Let it grow with content */
+    }
+
+    #viewDiv {
+        width: 100%;
+        height: 60vh; /* Map should take up less space on small screens */
+    }
+
+    #navPane ul li {
+        padding: 10px;  /* Space out the items for better touch interaction */
+    }
+    /*  END OF MOBILE DEVICE RESIZING */
+
+    /* Option button texts can be larger on small screens */
+    #navPane ul li a {
+        font-size: 20px;
+    }
+}
+
+/* adding flex-box to keep header visible */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+/* set the size of the map */
+#viewDiv {
+    flex: 1; /* keep map visible */
+    position: relative; /* add to keep zoom visible on map */
+    overflow: hidden; /* to keep the map from creating a vertical scroll bar */
+}
+
+/* left nav flex - map is overriding the left nav */
+    .container {
+        display: flex;
+        flex: 1;
+        margin-bottom: 60px;
+    }
+
+/* header style */   /* added z-index and flexbox */
+header {
+    font-family: 'Calibri', sans-serif; /* match our ppt slides */
+    background-color: rgb(255,255,255); /* white */
+    color: rgb(189, 88, 44); /* match our ppt slides */
+    font-size: 30px; /* increased font size*/
+    font-weight: bold; /* make title stand out, trying bolder */
+    text-align: center;
+    padding: 10px;
+    border: 2px solid rgb(189, 88, 44);
+    z-index: 10; /* place header on top of the map */
+    position: relative; /* add to keep zoom visible on map */
+    box-shadow: 0 5px 5px #636363
+}
+
+/* copied footer from notable stops */
+footer {
+    font-family: 'Calibri', sans-serif; /* match our ppt slides */
+    background-color: rgb(255,255,255); /* white */
+    color: rgb(189, 88, 44); /* match our ppt slides */
+    font-size: 18px; /* increased font size*/
+    font-weight: bold; /* make title stand out, trying bolder */
+    text-align: center;
+    padding: 5px;
+    border: 2px solid rgb(189, 88, 44);
+    z-index: 10; /* place header on top of the map */
+    position: fixed; /* to span across bottom */
+    box-shadow: 0 5px 5px #636363;
+    bottom: 0px;
+    width: 100%;
+    left: 0;
+  }
+
+h3,
+p,
+.description {
+    text-align: center;
+    margin: 10px;
+    color: rgb(121, 40, 6);
+    font-size: 14px;
+}
+
+/* change styling to links in header */
+.nav-link {
+    font-size: 18px; /* smaller font size for navigation links */
+    margin: 0 10px; /* add spacing between the links */
+    text-decoration: none;
+    color: rgb(189, 88, 44); /* match the header color */
+    }
+
+/* add box around nav links in header for better user experience */
+.nav-link:hover {
+    background-color: rgb(189, 88, 44); /*setting box fill color */
+    color: white; /*link color changes to white*/
+    border: 1px solid rgb(189, 88, 44); /*setting box border color */
+    border-radius: 5px;
+    }
+
+.nav-link:active {
+  border: 1px solid rgb(189,88, 44);
+  border-radius: 5px;
+}
+
+/* left navigation window style */
+#navPane {
+    width: 500px;
+    background-color: white;
+    border-right: 2px solid rgb(189, 88, 44);
+    display: flex;  /* add to space out the 4 options */
+    flex-direction: column;
+}
+
+#navPane ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; changed to space-between to evenly space out the options */
+}
+
+#navPane ul li {
+    flex: 1;    /* adding flex and center for options */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 0; */
+    border-bottom: 2px solid rgb(189, 88, 44); /* add a divider line between the options */
+}
+
+/* attempt to resize option 1/description */
+#navPane ul li:nth-child(1) {
+    flex: 1;
+}
+
+#navPane ul li:nth-child(2) {
+    height: 310px; /* set fixed height for Option 2/query tool */
+}
+
+#navPane ul li:nth-child(3) {
+    /* height: 110px; set fixed height for Option 3/buffer tool */
+    height: auto; /* Allow flexible height for varying screen sizes */
+    min-height: 130px; /* Maintain minimum height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top */
+    padding: 10px; /* Add inner spacing to prevent text overflow */
+    background-color: #f4a460; /* Keep sandy beige background */
+    box-sizing: border-box; /* Include padding in total size */
+    overflow: hidden; /* Ensure no content bleeds out */
+}
+
+#navPane ul li:nth-child(4) {
+    height: 120px; /* set fixed height for Option 4/distance calc */
+    min-height: 110px;
+}
+
+#navPane ul li:nth-child(1) {
+    /* background-color: #d2b48c; light brown */
+    background-color: #ffdab9; /* peach */
+
+}
+
+#navPane ul li:nth-child(2) {
+    background-color: #808000; /* olive green */
+    background-color: #8a8a5b; /* olive green */
+}
+
+#navPane ul li:nth-child(3) {   /* buffer calculator */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4a460; /* sandy beige */
+}
+
+#navPane ul li:nth-child(4) {    /* distance calculator */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #cd5c5c; soft clay */
+    background-color: #bdb9b9; /* gray */
+}
+
+#navPane ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0); /* made color darker, standard color was not dark enough */
+    font-family: 'Calibri', sans-serif;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
+#navPane ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Button styling for buffer*/
+#toggleButton3 {
+    margin: 5px 0;
+    padding: 8px;
+    /* background-color: #702963; dark purple */
+    background-color: #556b2f; /* deep olive */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Calibri', sans-serif;
+    text-align: center;
+}
+
+/* buffer instructions styling */
+.buffer-instructions {
+    color: rgb(0, 0, 0);
+    font-family: 'Calibri', sans-serif;
+    text-align: center;
+    margin: 5px;
+    /* padding-left: 90px; */
+    width: 100%;
+}
+
+/* Distance output styling for buffer */
+#distanceOutput3 {
+    color: rgb(0, 0, 0);
+    font-family: 'Calibri', sans-serif;
+    text-align: center;
+    margin-top: 5px;
+    width: 100%;
+}
+
+#option3Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 10px;
+}
+
+#radiusSelect {
+    margin: 5px 0;
+    padding: 8px;
+    font-family: 'Calibri', sans-serif;
+    text-align: center;
+    font-size: 14px;
+  }
+
+/* ***formatting for distance calc elements*** */
+/*styling for distance calc container*/
+  #distCalcSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+
+  }
+/*styling for distance calc instructions*/
+  #distCalcInstructions {
+    color: rgb(0, 0, 0);
+    font-family: 'Calibri', sans-serif;
+    text-align: center;
+    margin: 5px;
+    width: 100%;
+  }
+/*styling for distance calc button*/
+  #toggleButton {
+    margin: 5px 0;
+    padding: 8px;
+    background-color: #556b2f; /* deep olive */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Calibri', sans-serif;
+    text-align: center;
+}
+/*styling for output text for distance calc*/
+  #distanceOutput {
+    color: rgb(109, 106, 105);
+    font-family: 'Calibri', sans-serif;
+    text-align: center;
+    margin-top: 5px;
+    width: 100%;
+  }
+/* ***end of formatting for distance calc elements*** */
+
+/* adding background to scale bar - cannot read over other text */
+.custom-scale-bar {
+    background-color: rgba(255, 255, 255, 0.8); /* light background */
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: black;
+    position: absolute;
+    bottom: 60px; /* move the scale bar up, as it is under the footer */
+    right: 10px;
+}
+
+/* add button to reset map extent */
+.full-extent-button {
+    display: block; /* ensure the button is displayed */
+    position: absolute;
+    top: 130px;
+    left: 15px;
+    padding: 8px;
+    background-color: #ffffff;
+    color: rgb(34, 29, 29);
+    border: none;
+    cursor: pointer;
+    font-family: 'Calibri', sans-serif;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 5; /* ensure it's above other elements */
+}
+
+.esri-popup .esri-popup-header .esri-title {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+
+/* ***formatting for query elements*** */
+/*formatting for query section*/
+#querySection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 10px;
+}
+
+/*styling for query results text*/
+#querySection p {
+      color: rgb(0, 0, 0);
+      font-family: 'Calibri', sans-serif;
+      text-align: center;
+      margin-top: 5px;
+      width: 100%;
+  }
+
+/*formatting container for run query and clear query buttons*/
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/*styling checkboxes*/
+#featuresCheckboxes, #restAreaTypeCheckboxes {
+    display: block;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 10px;
+    text-align: left;
+}
+
+/*formatting container for checkboxes*/
+#querySection .checkboxes-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/*styling for dropdown box*/
+.dropdown-content {
+    display: block;
+    position: static;
+    left: 100%;
+    top: 0;
+    background-color: #f9f9f9;
+    width: 225px;
+    height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+/*styling for content inside dropdown menu*/
+.dropdown-content label {
+    display: block;
+    padding: 5px 5px;
+    text-align: left;
+    font-family: 'Calibri', sans-serif;
+}
+/*styling for query buttons*/
+.buttons-container button {
+    background-color: #556b2f; /* deep olive */
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Calibri', sans-serif;
+}
+/* ***end of formatting for query elements*** */

@@ -1,0 +1,172 @@
+/* resources css */
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #d2b48c;
+}
+
+header {
+    font-family: 'Calibri', sans-serif; /* match our ppt slides */
+    background-color: rgb(255,255,255); /* white */
+    color: rgb(189, 88, 44); /* match our ppt slides */
+    font-size: 30px; /* increase font size */
+    font-weight: bold; /* make the font bold */
+    text-align: center;
+    padding: 10px;
+    border: 2px solid rgb(189, 88, 44);
+    z-index: 10; /* place header on top of the map */
+    position: relative; /* add to keep zoom visible on map */
+    box-shadow: 0 5px 5px #636363 /*added shadow visual below header */
+}
+
+footer {
+  font-family: 'Calibri', sans-serif; /* match our ppt slides */
+  background-color: rgb(255,255,255); /* white */
+  color: rgb(189, 88, 44); /* match our ppt slides */
+  font-size: 18px; /* increased font size*/
+  font-weight: bold; /* make title stand out, trying bolder */
+  text-align: center;
+  padding: 5px;
+  border: 2px solid rgb(189, 88, 44);
+  z-index: 10; /* place header on top of the map */
+  position: relative; /* add to keep zoom visible on map */
+  box-shadow: 0 5px 5px #636363;
+  /* display: flex; */
+  bottom: 0px;
+  /* margin: 0; */
+  position: fixed;
+  width: 100%;
+}
+
+.intro-description {
+  text-align: center;
+  font-family: 'Calibri', sans-serif;
+  font-style: italic;
+  font-size: 45px;
+  color: white;
+  margin-top: 10px;
+}
+
+/* change styling to links in header */
+.nav-link {
+    font-size: 18px; /* smaller font size for navigation links */
+    margin: 0 10px; /* add spacing between the links */
+    text-decoration: none;
+    color: rgb(189, 88, 44); /* match the header color */
+    }
+
+/* add box around nav links in header for better user experience */
+.nav-link:hover {
+    background-color: rgb(189, 88, 44); /*setting box fill color */
+    color: white; /*link color changes to white*/
+    border: 1px solid rgb(189, 88, 44); /*setting box border color */
+    border-radius: 5px;
+    }
+
+.nav-link:active {
+  border: 1px solid rgb(189,88, 44);
+  border-radius: 5px;
+
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+/*styling for Saftey Rest Area List*/
+.resource-link-1 {
+  font-size: 30px;
+  font-family: 'Calibri', sans-serif;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  color: #ffdab9; /*peach color to match main colors*/
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+/*changing design for hover-over*/
+.resource-link-1:hover {
+  color: white;
+  background-color: #ffdab9;
+}
+/*styling for Saftey Rest Area Map link*/
+.resource-link-2 {
+  font-size: 30px;
+  font-family: 'Calibri', sans-serif;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  color:  #556b2f; /*deep olive color to match main colors*/
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+/*changing design for hover-over*/
+.resource-link-2:hover {
+  color: white;
+  background-color: #556b2f;
+}
+
+/*styling for Safe Driving Practices link*/
+.resource-link-3 {
+  font-size: 30px;
+  font-family: 'Calibri', sans-serif;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  color: #f4a460; /*sandy beige color to match main colors*/
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+/*changing design for hover-over*/
+.resource-link-3:hover{
+  color: white;
+  background-color: #f4a460;
+}
+
+/*styling for Texas Transportation Code link*/
+.resource-link-4 {
+  font-size: 30px;
+  font-family: 'Calibri', sans-serif;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  color: #bdb9b9; /*gray color to match main colors*/
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+/*changing design for hover-over*/
+.resource-link-4:hover {
+  color: white;
+  background-color: #bdb9b9;
+}
+/*Styling for Map Reference link*/
+.resource-link-5 {
+  font-size: 30px;
+  font-family: 'Calibri', sans-serif;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  color:  #74C365; /*muted green color to color themes*/
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+/*changing design for hover-over*/
+.resource-link-5:hover {
+  color: white;
+  background-color: #74C365;
+
+}
+
+.r-links{
+  text-align: center;
+  margin: 10px 0;
+}
